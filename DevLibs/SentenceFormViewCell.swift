@@ -10,6 +10,8 @@ import UIKit
 
 class SentenceFormViewCell: UITableViewCell {
 
+    @IBOutlet weak var textField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

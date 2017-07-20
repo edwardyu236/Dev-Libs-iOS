@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cge-8w-bN6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--DevLibs-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DevLibs" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,32 +20,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevLibs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VI7-5L-cwR">
-                                <rect key="frame" x="138" y="20" width="98.5" height="33.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYU-M1-VaU">
-                                <rect key="frame" x="143" y="318" width="88" height="30"/>
-                                <state key="normal" title="Play DevLibs"/>
-                                <connections>
-                                    <segue destination="qMP-p5-VCq" kind="show" id="tm4-ud-uAG"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kxr-Ua-KSS">
+                                <rect key="frame" x="120" y="299.5" width="135" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYU-M1-VaU">
+                                        <rect key="frame" x="23.5" y="0.0" width="88" height="30"/>
+                                        <state key="normal" title="Play DevLibs"/>
+                                        <connections>
+                                            <action selector="playDevLibsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EfO-Z5-8ql"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVy-jm-At0">
+                                        <rect key="frame" x="0.0" y="38" width="135" height="30"/>
+                                        <state key="normal" title="Show All Sentences"/>
+                                        <connections>
+                                            <action selector="showAllSentencesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="92k-5b-7ha"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VI7-5L-cwR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dmc-6n-kXe"/>
-                            <constraint firstItem="VI7-5L-cwR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Qd4-dZ-vyS"/>
-                            <constraint firstItem="yYU-M1-VaU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hNY-Yu-urX"/>
-                            <constraint firstItem="yYU-M1-VaU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nEi-IM-Pao"/>
+                            <constraint firstItem="Kxr-Ua-KSS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nfw-KK-Z6w"/>
+                            <constraint firstItem="Kxr-Ua-KSS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bHL-qj-Oof"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="DevLibs" id="YhC-QX-mIf"/>
+                    <connections>
+                        <segue destination="MYV-mk-uYJ" kind="show" identifier="showRandomSentenceForm" id="EP8-ZK-vJ8"/>
+                        <segue destination="gZu-Aa-mph" kind="show" identifier="showAllSentences" id="Q9W-I1-qpo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="82" y="265"/>
+            <point key="canvasLocation" x="889" y="770"/>
         </scene>
         <!--Sentences-->
         <scene sceneID="ZtB-d8-NpP">
@@ -94,28 +102,85 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="MYV-mk-uYJ" kind="show" identifier="showSpecificSentenceForm" id="hPY-sz-kkt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POv-oA-gMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2207.1999999999998" y="128.18590704647679"/>
+            <point key="canvasLocation" x="1812" y="1103"/>
+        </scene>
+        <!--Enter Words-->
+        <scene sceneID="wiV-3B-0V2">
+            <objects>
+                <tableViewController id="MYV-mk-uYJ" customClass="SentenceFormViewController" customModule="DevLibs" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Smd-c2-jQX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="wordCell" id="NGN-Mp-vIE" customClass="SentenceFormViewCell" customModule="DevLibs" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NGN-Mp-vIE" id="lQw-Cs-Rgr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tdm-gS-2I2">
+                                            <rect key="frame" x="8" y="6" width="359" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Tdm-gS-2I2" secondAttribute="trailing" constant="8" id="VMw-Eu-Cw2"/>
+                                        <constraint firstItem="Tdm-gS-2I2" firstAttribute="centerY" secondItem="lQw-Cs-Rgr" secondAttribute="centerY" id="hsq-Jp-HxN"/>
+                                        <constraint firstItem="Tdm-gS-2I2" firstAttribute="leading" secondItem="lQw-Cs-Rgr" secondAttribute="leading" constant="8" id="pFh-fu-dH5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="Tdm-gS-2I2" id="lwZ-yH-Omv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MYV-mk-uYJ" id="Bxj-T2-c0S"/>
+                            <outlet property="delegate" destination="MYV-mk-uYJ" id="cKf-PT-4AI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Enter Words" id="H6V-Nc-cBU">
+                        <barButtonItem key="rightBarButtonItem" title="Generate" id="jYw-L9-w9n">
+                            <connections>
+                                <action selector="generateSentenceButtonTapped:" destination="MYV-mk-uYJ" id="ZDj-tM-7nP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjR-jI-JAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2836" y="248"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="zdd-jp-lzi">
+        <scene sceneID="qyT-ro-inM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qMP-p5-VCq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cge-8w-bN6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bKz-Vg-RIH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o2Q-wy-POk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="gZu-Aa-mph" kind="relationship" relationship="rootViewController" id="Kwm-Ph-ilr"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="36u-sL-uvz"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gW0-5f-NCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpo-GF-Jwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="127.28635682158921"/>
+            <point key="canvasLocation" x="80.799999999999997" y="264.91754122938534"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EP8-ZK-vJ8"/>
+    </inferredMetricsTieBreakers>
 </document>
